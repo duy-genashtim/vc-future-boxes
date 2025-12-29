@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Open Capsule - FutureBoxes</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee9d2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221a10",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    animation: {
+                        'rise-up': 'riseUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'fade-in': 'fadeIn 1.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        riseUp: {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(238, 157, 43, 0.3);
+            border-radius: 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-300">
+<!-- Main Container -->
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- TopAppBar -->
+<header class="flex items-center justify-between p-4 z-20 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md sticky top-0 animate-fade-in">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-800 dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Open Capsule</h2>
+<div class="size-10"></div> <!-- Spacer for alignment -->
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto pb-24 px-4 scroll-smooth">
+<!-- Animation Wrapper: Simulates content rising from the box -->
+<div class="animate-rise-up flex flex-col gap-6 pt-4">
+<!-- Header Icon & Title (Modified ProfileHeader) -->
+<div class="flex flex-col items-center gap-4">
+<!-- Large Icon Container representing the capsule type -->
+<div class="relative flex items-center justify-center size-32 rounded-full bg-primary/20 ring-4 ring-primary/10 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-primary" style="font-size: 64px;">auto_awesome</span>
+<!-- Decorative glow effect -->
+<div class="absolute inset-0 rounded-full bg-primary/30 blur-xl -z-10"></div>
+</div>
+<div class="flex flex-col items-center justify-center text-center gap-1">
+<h1 class="text-slate-900 dark:text-white text-[28px] font-bold leading-tight tracking-tight">Daily Reflection</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-medium">From your past self</p>
+</div>
+</div>
+<!-- Metadata Chips -->
+<div class="flex gap-3 flex-wrap justify-center w-full">
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 px-4 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_month</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-semibold">Sent: Oct 12, 2023</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 px-4 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">lock_clock</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-semibold">Waited: 1 Year</p>
+</div>
+</div>
+<!-- Divider -->
+<div class="w-full h-px bg-slate-200 dark:bg-white/10 my-1"></div>
+<!-- Body Text -->
+<div class="prose dark:prose-invert max-w-none">
+<p class="text-slate-800 dark:text-slate-100 text-lg font-normal leading-relaxed">
+                        Hey! If you are reading this, you finally finished that project. Remember how stressed you were? It wasn't that bad, right? 
+                        <br/><br/>
+                        I hope you're taking some time to celebrate today. Buy yourself that coffee you like, sit in the park, and just breathe. You did good.
+                        <br/><br/>
+                        Don't forget to call Mom and tell her about the promotion (fingers crossed we got it!).
+                    </p>
+</div>
+<!-- Media Gallery Section -->
+<div class="flex flex-col gap-3 mt-2">
+<h3 class="text-slate-900 dark:text-white text-base font-bold mb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">collections</span>
+                        Attached Memories
+                    </h3>
+<!-- ImageGrid -->
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-[1.02]" data-alt="A photo of a desk cluttered with papers and a coffee cup during a late night work session" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzrh_BF4iVUE4GGZwl77G93SrHiif0XkxLF64tqS-F3odeTAw4sFXXB_jhm8LMgaWNdkwGxvIaAcZQv4LeBgqyhgHviqRlPsLQl7lFfDla4DWCJ1m5cnD6V3w2A4cpN4TmD8y4xIrWnq3SgxvF4ahIO6IyjGeoEVG_Kz7PNKVESk8dz6kMwudezMZtbvvmy3Uit3DiPNtIEgJu2TQCl4LNhtBn6gYP1LK0zF-RnT1b1B1ej2SyavFKGQh7Mw7wjoRiRJDMt_ZEda9Y");'>
+<div class="w-full h-full bg-black/10 hover:bg-transparent rounded-xl transition-colors"></div>
+</div>
+</div>
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-[1.02]" data-alt="A selfie of a smiling person holding a thumbs up in a bright office environment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZqwievkQyKPTr59MQEfgvs7hip6C7BOjy3gAwjf_j2EZLw9ldFq9GVt6LJ0DPnOHTcjbQz1369ejtST8U6-lVPn7LcObvHu2i5XZGzYWI_bKLqkR_0TVsq8kHl1NhDTwJsRyu9n88sEEiVnEr1O0UVNx4uOmwc45SntGXjt_MlEV6gSIQukCwL6u6nu_vHh4_KBYAomwf3ShbsuJoqPpjv92rTRSQCiZ-CVFj5xmAhvI5qyCldWsLHCkjGz6Qk_zkdeHuGY_-wQIS");'>
+<div class="w-full h-full bg-black/10 hover:bg-transparent rounded-xl transition-colors"></div>
+</div>
+</div>
+<div class="col-span-2">
+<div class="w-full bg-center bg-no-repeat aspect-[2/1] bg-cover rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-[1.01]" data-alt="A wide shot of a sunset view from an office window with city silhouette" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPNDF7l6e2AcRTGKqzOCMsgLk-m9ZAGtiU3ohvwgWcgr2DchFvsFoX76Me6mCA1rZevvHLHq6-BKtnlDnzwYp2Zs0GMTBWLmO27ysUE8x-JW4ixiuPyzwouyN1f8xNDlxrL3ch5PzcW5QUG5ChrzB2DLRCExX6dXaGI_HBX63dV5-uCYnshfrlYKFq6EVNz4_f38uc11wRNUT_COP4uSQX_v4KArEQW8iTFslSeMwXb5g3MXe3-Wb58dFZfKA9Nsz0mqw24Fy44yfM");'>
+<div class="w-full h-full bg-black/10 hover:bg-transparent rounded-xl transition-colors"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Extra space for scrolling above the floating button -->
+<div class="h-8"></div>
+</div>
+</main>
+<!-- Floating Action Button Container -->
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pt-12 z-30 animate-fade-in">
+<button class="w-full h-14 bg-primary hover:bg-primary/90 active:scale-[0.98] rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/30 group">
+<span class="text-white text-lg font-bold">Continue</span>
+<span class="material-symbols-outlined text-white transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FutureBoxes - Reflection</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee9d2b",
+                        "primary-dark": "#d98818",
+                        "background-light": "#FFFBF5", /* Warm off-white as requested */
+                        "background-dark": "#221a10",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d2418",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", 
+                        "lg": "0.75rem", 
+                        "xl": "1rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom radio styling to hide default input and style the label */
+        input:checked + div {
+            background-color: #ee9d2b; /* primary */
+            color: white;
+            border-color: #ee9d2b;
+        }
+        .rating-input:checked + label {
+            color: #ee9d2b;
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b160d] dark:text-[#f3eee7] font-display min-h-screen flex flex-col antialiased selection:bg-primary/30">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-3 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md transition-colors">
+<button class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full active:bg-black/5 dark:active:bg-white/10 text-inherit">
+<span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">
+            Time Capsule Reflection
+        </h1>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 flex flex-col w-full max-w-md mx-auto px-6 pb-24 pt-4">
+<!-- Hero Visual Section -->
+<div class="flex flex-col items-center justify-center mb-8 animate-fade-in">
+<!-- Capsule Icon Container -->
+<div class="relative group cursor-default">
+<div class="absolute -inset-1 rounded-full bg-primary/20 blur-xl opacity-70 group-hover:opacity-100 transition duration-500"></div>
+<div class="relative flex h-24 w-24 items-center justify-center rounded-3xl bg-surface-light dark:bg-surface-dark shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-black/20 border border-black/5 dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-[48px]">rocket_launch</span>
+</div>
+</div>
+<!-- Metadata -->
+<div class="mt-5 text-center space-y-1">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary-dark dark:text-primary text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">flag</span>
+                    Goal Capsule
+                </div>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Opened: Oct 24, 2025</p>
+</div>
+</div>
+<!-- The Quote / Question -->
+<div class="relative mb-10 mt-2">
+<span class="absolute -top-6 -left-2 text-6xl text-primary/20 font-serif font-black select-none">“</span>
+<h2 class="relative z-10 text-2xl md:text-3xl font-bold text-center leading-snug text-gray-900 dark:text-white px-2">
+                Did you finally learn to play the guitar?
+            </h2>
+<span class="absolute -bottom-10 -right-2 text-6xl text-primary/20 font-serif font-black select-none">”</span>
+</div>
+<div class="h-px w-16 bg-gray-200 dark:bg-gray-800 mx-auto mb-8"></div>
+<!-- Variant A: Binary Choice (Goal) -->
+<div class="flex flex-col gap-4 mb-8">
+<h3 class="text-center text-sm font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500 mb-2">Did you achieve this?</h3>
+<div class="flex gap-4 h-16">
+<!-- YES Option -->
+<label class="flex-1 cursor-pointer group relative">
+<input class="peer sr-only" name="goal_achievement" type="radio" value="yes"/>
+<div class="absolute inset-0 bg-white dark:bg-surface-dark rounded-2xl border-2 border-transparent shadow-sm peer-checked:bg-primary peer-checked:border-primary peer-checked:shadow-lg transition-all duration-200 ease-out"></div>
+<div class="absolute inset-0 border-2 border-gray-100 dark:border-white/10 rounded-2xl peer-checked:border-primary transition-colors"></div>
+<div class="relative h-full flex items-center justify-center gap-2 text-gray-600 dark:text-gray-300 peer-checked:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+<span class="text-lg font-bold">YES</span>
+</div>
+</label>
+<!-- NO Option -->
+<label class="flex-1 cursor-pointer group relative">
+<input class="peer sr-only" name="goal_achievement" type="radio" value="no"/>
+<div class="absolute inset-0 bg-white dark:bg-surface-dark rounded-2xl border-2 border-transparent shadow-sm peer-checked:bg-primary peer-checked:border-primary peer-checked:shadow-lg transition-all duration-200 ease-out"></div>
+<div class="absolute inset-0 border-2 border-gray-100 dark:border-white/10 rounded-2xl peer-checked:border-primary transition-colors"></div>
+<div class="relative h-full flex items-center justify-center gap-2 text-gray-600 dark:text-gray-300 peer-checked:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">cancel</span>
+<span class="text-lg font-bold">NO</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Variant B: Decision Rating (Secondary Context visual) -->
+<!-- Added to demonstrate the capability as per prompt, styled subtly -->
+<div class="flex flex-col gap-3 p-5 rounded-2xl bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-white/5">
+<div class="flex justify-between items-end mb-1">
+<h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400">Rate your journey</h3>
+<span class="text-xs text-primary font-bold">Optional</span>
+</div>
+<div class="flex justify-between items-center px-1">
+<label class="cursor-pointer group">
+<input class="sr-only rating-input" name="rating" type="radio" value="1"/>
+<span class="material-symbols-outlined text-3xl text-gray-300 dark:text-gray-600 group-hover:text-primary/50 transition-colors">star</span>
+</label>
+<label class="cursor-pointer group">
+<input class="sr-only rating-input" name="rating" type="radio" value="2"/>
+<span class="material-symbols-outlined text-3xl text-gray-300 dark:text-gray-600 group-hover:text-primary/50 transition-colors">star</span>
+</label>
+<label class="cursor-pointer group">
+<input class="sr-only rating-input" name="rating" type="radio" value="3"/>
+<span class="material-symbols-outlined text-3xl text-gray-300 dark:text-gray-600 group-hover:text-primary/50 transition-colors">star</span>
+</label>
+<label class="cursor-pointer group">
+<input class="sr-only rating-input" name="rating" type="radio" value="4"/>
+<span class="material-symbols-outlined text-3xl text-gray-300 dark:text-gray-600 group-hover:text-primary/50 transition-colors">star</span>
+</label>
+<label class="cursor-pointer group">
+<input class="sr-only rating-input" name="rating" type="radio" value="5"/>
+<span class="material-symbols-outlined text-3xl text-gray-300 dark:text-gray-600 group-hover:text-primary/50 transition-colors">star</span>
+</label>
+</div>
+<div class="flex justify-between px-1 mt-1">
+<span class="text-[10px] uppercase font-bold text-gray-400">Regret</span>
+<span class="text-[10px] uppercase font-bold text-gray-400">Content</span>
+</div>
+</div>
+</main>
+<!-- Fixed Footer Action -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pb-8">
+<div class="max-w-md mx-auto">
+<button class="w-full bg-primary hover:bg-primary-dark text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-primary/30 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group">
+                Submit Reflection
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

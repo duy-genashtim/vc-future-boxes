@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --version)",
+      "Bash(npm --version:*)",
+      "Bash(npx create-expo-app@latest --version)",
+      "Bash(npx create-expo-app@latest . --template blank-typescript --yes)",
+      "Bash(cat:*)",
+      "Bash(npm install:*)",
+      "Bash(ls:*)",
+      "Bash(npx expo install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(echo:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(done)"
+    ]
+  }
+}

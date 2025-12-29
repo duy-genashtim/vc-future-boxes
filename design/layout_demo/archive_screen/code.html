@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Archive Screen - FutureBoxes</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee9d2b",
+                        "primary-dark": "#d68b24",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221a10",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2c241b",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for chrome/safari/opera */
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-primary/30">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-stone-200 dark:border-stone-800">
+<button aria-label="Go back" class="flex size-10 items-center justify-center rounded-full hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Archive</h2>
+</header>
+<!-- Filter Chips -->
+<div class="sticky top-[60px] z-40 bg-background-light dark:bg-background-dark pt-2 pb-4 px-4 overflow-x-auto no-scrollbar">
+<div class="flex gap-3 min-w-max">
+<!-- Active Chip -->
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-primary px-5 shadow-sm shadow-primary/20 transition-transform active:scale-95">
+<span class="text-white text-sm font-semibold">All</span>
+</button>
+<!-- Inactive Chips -->
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-stone-200 dark:border-stone-700 px-5 hover:border-primary/50 transition-colors active:scale-95">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Predictions</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-stone-200 dark:border-stone-700 px-5 hover:border-primary/50 transition-colors active:scale-95">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Letters</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-stone-200 dark:border-stone-700 px-5 hover:border-primary/50 transition-colors active:scale-95">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Photos</span>
+</button>
+</div>
+</div>
+<!-- Capsule List -->
+<main class="flex-1 px-4 flex flex-col gap-4 pb-8">
+<!-- Card 1: Prediction (Incorrect) -->
+<article class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-stone-100 dark:border-stone-800 active:scale-[0.99] transition-transform cursor-pointer">
+<div class="flex justify-between items-start gap-3 mb-2">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">diamond</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight">2023 Prediction</h3>
+<p class="text-xs font-medium text-slate-400 dark:text-slate-500 mt-0.5">Sent Dec 31, 2022 • Opened Jan 1, 2024</p>
+</div>
+</div>
+<!-- Outcome Badge -->
+<div class="shrink-0 flex items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30 px-2.5 py-1">
+<span class="text-xs font-semibold text-red-600 dark:text-red-400">Incorrect ❌</span>
+</div>
+</div>
+<div class="pl-[52px]">
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                    I bet that by 2024, electric cars will be cheaper than gas cars. If this comes true, buy yourself a nice dinner!
+                </p>
+</div>
+</article>
+<!-- Card 2: Letter (5 Stars) -->
+<article class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-stone-100 dark:border-stone-800 active:scale-[0.99] transition-transform cursor-pointer">
+<div class="flex justify-between items-start gap-3 mb-2">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight">Letter to Self</h3>
+<p class="text-xs font-medium text-slate-400 dark:text-slate-500 mt-0.5">Sent Jun 15, 2020 • Opened Jun 15, 2025</p>
+</div>
+</div>
+<!-- Outcome Badge -->
+<div class="shrink-0 flex items-center justify-center rounded-full bg-primary/10 px-2.5 py-1">
+<span class="text-xs font-bold text-primary-dark dark:text-primary">5 Stars ★</span>
+</div>
+</div>
+<div class="pl-[52px]">
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                    Remember to stay calm during the big move. You are stronger than you think. Also, did you finally learn to play guitar?
+                </p>
+</div>
+</article>
+<!-- Card 3: Photo (No Rating) -->
+<article class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-stone-100 dark:border-stone-800 active:scale-[0.99] transition-transform cursor-pointer">
+<div class="flex justify-between items-start gap-3 mb-2">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight">Graduation Day</h3>
+<p class="text-xs font-medium text-slate-400 dark:text-slate-500 mt-0.5">Sent May 20, 2019 • Opened May 20, 2024</p>
+</div>
+</div>
+<!-- Outcome Badge - Optional/Empty for photos sometimes -->
+<div class="shrink-0 flex items-center justify-center rounded-full bg-stone-100 dark:bg-stone-800 px-2.5 py-1">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Viewed</span>
+</div>
+</div>
+<div class="pl-[52px]">
+<div class="relative w-full h-32 rounded-lg overflow-hidden mb-2 bg-stone-100 dark:bg-stone-800">
+<img alt="Graduation caps thrown in the air against a blue sky" class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" data-alt="Graduation caps thrown in the air against a blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClOQNPfnDx2r1GNkHSIxikY0nCWk2k5v0nGp0H2nfv91ZXzlUmGcEKOtquYTVnlA-PrXn46LD9wWz7gYgLHtuCYPW2vBk311DVhLRVMZU9bXqIY9f9pomzab2FI6T-kHpdRcHY8BoRFeYoYFwvMKbt_o9Zpu5lcpD_QRO6Mo0hg17NHt2TtTmqn0JwXWPLCfkgDK9-UNYIJwOZqxglEFloPds7Ugw8YnJbRJ0jjzKxIbn3SLPAJLoqyT_yQctwjhSmpfDkvaDmc7Zk"/>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-1">
+                    Attached: "Us at the ceremony.jpg"
+                </p>
+</div>
+</article>
+<!-- Card 4: Prediction (Correct) -->
+<article class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-stone-100 dark:border-stone-800 active:scale-[0.99] transition-transform cursor-pointer">
+<div class="flex justify-between items-start gap-3 mb-2">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight">Career Goal</h3>
+<p class="text-xs font-medium text-slate-400 dark:text-slate-500 mt-0.5">Sent Jan 10, 2021 • Opened Jan 10, 2023</p>
+</div>
+</div>
+<!-- Outcome Badge -->
+<div class="shrink-0 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 px-2.5 py-1">
+<span class="text-xs font-semibold text-green-700 dark:text-green-400">Correct ✅</span>
+</div>
+</div>
+<div class="pl-[52px]">
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                    I predict I will have moved into a senior design role by this date. Fingers crossed!
+                </p>
+</div>
+</article>
+</main>
+<!-- Footer / End of List -->
+<footer class="pb-8 pt-2 flex flex-col items-center justify-center gap-3">
+<!-- Visual "End of list" element -->
+<div class="h-1 w-16 rounded-full bg-stone-200 dark:bg-stone-800 mb-2"></div>
+<p class="text-sm font-medium text-slate-400 dark:text-slate-600">End of list</p>
+<!-- Included Spinner just to show how it would look if loading, hidden by default or shown as part of pagination before end of list -->
+<!-- 
+        <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div> 
+        -->
+</footer>
+</body></html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FutureBoxes - Home</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee9d2b",
+                        "primary-dark": "#d98a1f",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221a10",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d2418",
+                        "text-main": "#1b160d",
+                        "text-sub": "#9a794c",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Pull to refresh simulation styles */
+        .ptr-element {
+            transition: transform 0.3s ease;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display transition-colors duration-200 min-h-screen flex flex-col overflow-x-hidden antialiased">
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-black/5 dark:border-white/5">
+<div class="flex items-center justify-between px-5 py-4">
+<h1 class="text-xl font-bold tracking-tight text-text-main dark:text-white">FutureBoxes</h1>
+<a class="text-primary font-bold text-sm hover:opacity-80 transition-opacity" href="#">Archive</a>
+</div>
+</header>
+<!-- Main Content Area with Pull-to-Refresh Indicator -->
+<main class="flex-1 relative w-full max-w-md mx-auto px-4 pt-4 pb-24">
+<!-- Pull to Refresh Spinner (Simulated visual) -->
+<div class="flex justify-center -mt-10 pt-4 pb-4 opacity-0 transition-opacity duration-300 pointer-events-none" id="refresh-indicator">
+<span class="material-symbols-outlined animate-spin text-primary">progress_activity</span>
+</div>
+<!-- Section Title -->
+<div class="flex items-baseline justify-between mb-4">
+<h2 class="text-sm font-bold uppercase tracking-wider text-text-sub dark:text-gray-400">Unlocking Soon</h2>
+<span class="text-xs font-medium text-text-sub/70 dark:text-gray-500">6 Capsules</span>
+</div>
+<!-- Capsule Grid (Responsive 2x3 or 3x2 depending on screen) -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Card 1: Ready - Photo -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-sm transition-transform hover:scale-[1.02] active:scale-95 cursor-pointer">
+<!-- Background Image/Gradient -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract warm orange and yellow sunset gradient" style="background-image: linear-gradient(135deg, rgba(238, 157, 43, 0.85), rgba(220, 100, 50, 0.9)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAjeJPIiIVoivwRnd72LTol0AhnlBo7IDFTCaZSULo2fZYBaAptwFr-YKS9fVNTZQVkrhMg64tASgxahFquagB2XLy8Oe_NlbO1EBw4nkZUNqhnKhATAVZaQ7oT-ut3N3YUBDdTrFDbbSI1NpErupfRVTQ8u9BXhaKZggMCVveNx-nnj6Mr4v7-_AFmJzH6vk0hlDlsfHIKeD9aW8IGkBK3Nm-pxKImiTKB2Lso1EbWP2rstleDk7hT1CKGNfcbHAzD5tYDhVYS4QI');">
+</div>
+<div class="relative h-full flex flex-col justify-between p-4">
+<div class="flex justify-between items-start">
+<div class="bg-white/20 backdrop-blur-sm rounded-full p-2 text-white">
+<span class="material-symbols-outlined block text-[20px]">image</span>
+</div>
+<span class="bg-white text-primary text-[10px] font-bold px-2 py-1 rounded-full shadow-sm uppercase tracking-wide">Ready!</span>
+</div>
+<div>
+<p class="text-white text-xs font-medium opacity-90 mb-0.5">From Oct 2022</p>
+<h3 class="text-white text-lg font-bold leading-tight">Graduation Trip</h3>
+</div>
+</div>
+</div>
+<!-- Card 2: 2 Days - Letter -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-sm transition-transform hover:scale-[1.02] active:scale-95 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract blue and teal cool gradient" style="background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.85), rgba(37, 99, 235, 0.9)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBChvfFpb0Oa-5RuS0PmCS_PRvA5SilSgsKoYHvgcUcbOitOBFyD6LNM6YGIG5VlVQspDrhNMMJvD06z4oB6gkWRpz7t78TfqK0uR9D4dR0GokLeRy9SO-0tc6q92eTE0Khw7IcpeqO628cRhlnSp3Cdg36ATsvTFRt9WeLMJWnyaBa6c5GP-HTtyeBEKwNVNRQ6bzonaO85QSf1VXt2LYs696_jYyVHzrHWlIxJC7QovNmo5myuuIRplyWAPa2uVO5q8ZnZ1Kb0AkI');">
+</div>
+<div class="relative h-full flex flex-col justify-between p-4">
+<div class="flex justify-between items-start">
+<div class="bg-white/20 backdrop-blur-sm rounded-full p-2 text-white">
+<span class="material-symbols-outlined block text-[20px]">article</span>
+</div>
+<span class="bg-black/30 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded-full border border-white/10">2 Days</span>
+</div>
+<div>
+<p class="text-white text-xs font-medium opacity-90 mb-0.5">Locked 2023</p>
+<h3 class="text-white text-lg font-bold leading-tight">To Future Me</h3>
+</div>
+</div>
+</div>
+<!-- Card 3: 1 Year - Voice -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-sm transition-transform hover:scale-[1.02] active:scale-95 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract purple and pink vibrant gradient" style="background-image: linear-gradient(135deg, rgba(147, 51, 234, 0.85), rgba(126, 34, 206, 0.9)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDcOmDBmUdaWevUqGFCYTVdEx3kw3B1KaRJns8mUi17afeKMxeKps7Pa30uoq4qBlKEH8MuCc6HBaHeP7RbNhAZ3_N-vmTZWhzm6ZRyTqNHiMRbmkxYSQvqdaHfmzymfBv6p-UaXKg1OBwnNiJAKdR5nhYvhriMm-0GaPYsHxM5F7lxZ2nKoocRW5gw4Ra359DJyNN2jcJUUCj14m2GJx3LNgtJWVEGtY7FbBcjFBcEo9wqpF_tzh2dTDdQrqHRNHln2cBWsNSwqbEE');">
+</div>
+<div class="relative h-full flex flex-col justify-between p-4">
+<div class="flex justify-between items-start">
+<div class="bg-white/20 backdrop-blur-sm rounded-full p-2 text-white">
+<span class="material-symbols-outlined block text-[20px]">mic</span>
+</div>
+<span class="bg-black/30 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded-full border border-white/10">1 Year</span>
+</div>
+<div>
+<p class="text-white text-xs font-medium opacity-90 mb-0.5">Locked Today</p>
+<h3 class="text-white text-lg font-bold leading-tight">First Words</h3>
+</div>
+</div>
+</div>
+<!-- Card 4: 5 Hours - Video -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-sm transition-transform hover:scale-[1.02] active:scale-95 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract teal and emerald gradient" style="background-image: linear-gradient(135deg, rgba(13, 148, 136, 0.85), rgba(15, 118, 110, 0.9)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbhf84Yri5gJhrqGragpo2hprTGt9uTRUF61AlTxoHpOyTSx4EV1gYEBy7q-dkuOVaaQ_SoxoCW53unyxYibz0GNKpOf6ebkC_t70LBsdyUorcFThtI0gk2dogbdpPTkK7-ak7pFSfC3sTeda4KOMNvuDSbQM8HVhcGCPpKof69tU-_cIA275LXyKCoYbwVSARpq6bcn2HW8Ao29f95FwuHWitF1Wsg5uN-kTq9pVEaJr0jp8HiMPT2OV0wHzy1d7_-Xfw4RiB4WMM');">
+</div>
+<div class="relative h-full flex flex-col justify-between p-4">
+<div class="flex justify-between items-start">
+<div class="bg-white/20 backdrop-blur-sm rounded-full p-2 text-white">
+<span class="material-symbols-outlined block text-[20px]">videocam</span>
+</div>
+<span class="bg-black/30 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded-full border border-white/10">5 Hours</span>
+</div>
+<div>
+<p class="text-white text-xs font-medium opacity-90 mb-0.5">Locked Yesterday</p>
+<h3 class="text-white text-lg font-bold leading-tight">Concert Clip</h3>
+</div>
+</div>
+</div>
+<!-- Card 5: 10 Mins - Mixed -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-sm transition-transform hover:scale-[1.02] active:scale-95 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract pink and rose gradient" style="background-image: linear-gradient(135deg, rgba(236, 72, 153, 0.85), rgba(219, 39, 119, 0.9)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYMtKsb8ak9hk-wY4-H6_oVVTTL2fBFntXJl3NHqVlcdu4fhEoW4VWL9Ch_gwvkdji3rNk2oS4y9rUBT6pldCRvuy9dMyy389SnW9bOfKQVK99ctiFzTcqtF6z10fE7H5Cy3zUH0fdycyk5NO4eBMtq0rKRSppLULXp67nrgOK0CipEY6pzjwyGqyjkFK7nFP_GTg-D9WIrFyDdjQh_cEv_zgOL1Imu7eGA3Uf_Jsu11LZpWA0AyvW6FD1uyxkpe4j7lNubbYb0fId');">
+</div>
+<div class="relative h-full flex flex-col justify-between p-4">
+<div class="flex justify-between items-start">
+<div class="bg-white/20 backdrop-blur-sm rounded-full p-2 text-white">
+<span class="material-symbols-outlined block text-[20px]">dashboard</span>
+</div>
+<span class="bg-black/30 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded-full border border-white/10">10 Mins</span>
+</div>
+<div>
+<p class="text-white text-xs font-medium opacity-90 mb-0.5">Locked Today</p>
+<h3 class="text-white text-lg font-bold leading-tight">Time Capsule</h3>
+</div>
+</div>
+</div>
+<!-- Card 6: Ready - Photo -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-sm transition-transform hover:scale-[1.02] active:scale-95 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract warm orange gradient" style="background-image: linear-gradient(135deg, rgba(234, 88, 12, 0.85), rgba(194, 65, 12, 0.9)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTDsidIargKXxLfObZXvu7sRUm6COkXGRkIWc69UeP9q-dmpI4glJi5OFAzaOK4nR3mi--ivV321DeD9OrqbmB_Ha-RAhJSKBMNiZNteY1GeNf_q3O4LE_9DXJbBp48MSCThOHqbPOVZBjUAdwWFHjGgwtgYkhYYGoDTK3teyug7TT6haak5HQoMq1KbMRlumvFw6KzL2f6Qv2uRY_boUvy-jBKJ41KQrt-C8Crniyo0WbOc3BErUNpJXH91cYupcBNhYkZBNV2InG');">
+</div>
+<div class="relative h-full flex flex-col justify-between p-4">
+<div class="flex justify-between items-start">
+<div class="bg-white/20 backdrop-blur-sm rounded-full p-2 text-white">
+<span class="material-symbols-outlined block text-[20px]">image</span>
+</div>
+<span class="bg-white text-primary text-[10px] font-bold px-2 py-1 rounded-full shadow-sm uppercase tracking-wide">Ready!</span>
+</div>
+<div>
+<p class="text-white text-xs font-medium opacity-90 mb-0.5">From 2021</p>
+<h3 class="text-white text-lg font-bold leading-tight">Old Apartment</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="h-6"></div> <!-- Spacer -->
+<!-- Empty State Suggestion (Hidden visually for this design but structured in DOM) -->
+<!-- 
+        <div class="flex flex-col items-center justify-center py-12 text-center hidden">
+             <div class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 text-gray-400">
+                <span class="material-symbols-outlined text-3xl">inbox</span>
+             </div>
+             <p class="text-text-main dark:text-white font-medium">No capsules yet</p>
+             <p class="text-sm text-text-sub mt-1">Create your first memory for the future.</p>
+        </div> 
+        -->
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-5 z-40">
+<button class="flex items-center justify-center w-14 h-14 rounded-full bg-primary hover:bg-primary-dark shadow-lg shadow-orange-500/30 transition-all duration-200 transform hover:scale-105 active:scale-95 group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+<span class="material-symbols-outlined text-white text-3xl group-hover:rotate-90 transition-transform duration-300">add</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-background-light dark:bg-background-dark border-t border-black/5 dark:border-white/5 pb-safe pt-2 px-6">
+<div class="flex justify-between items-center max-w-md mx-auto h-16">
+<a class="flex flex-col items-center justify-center w-16 gap-1 group" href="#">
+<span class="material-symbols-outlined text-primary text-[28px] group-hover:scale-110 transition-transform">home</span>
+<span class="text-[10px] font-medium text-primary">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-16 gap-1 group text-text-sub hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px] group-hover:scale-110 transition-transform">explore</span>
+<span class="text-[10px] font-medium">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center w-16 gap-1 group text-text-sub hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px] group-hover:scale-110 transition-transform">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+<!-- Safe area for iPhone home indicator -->
+<div class="h-4 w-full"></div>
+</nav>
+</body></html>

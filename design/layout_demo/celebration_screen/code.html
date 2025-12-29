@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Celebration Screen - FutureBoxes</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee9d2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221a10",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased overflow-hidden">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Progress Bar (Auto-navigation Timer) -->
+<div class="absolute top-0 left-0 w-full z-50 px-0">
+<div class="h-1.5 bg-gray-200/30 w-full">
+<!-- Simulating a progress bar roughly 80% full to show motion -->
+<div class="h-full bg-primary/90 shadow-[0_0_10px_rgba(238,157,43,0.8)] rounded-r-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Background Canvas & Ambient Glow -->
+<!-- Using an abstract gradient image to represent the celebration mood -->
+<div class="absolute inset-0 z-0 bg-cover bg-center opacity-40 dark:opacity-20" data-alt="Soft abstract radial gradient in orange and gold tones" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAskVGmXHRqSliyrBTkq9uiKf82bcdYdblUF-9mz7Z-IizMOPYxLTaAKil-bECSGOmBL8If2BdKNpO_gh1W4qkGUOQ93YoFqIzWQ0xjUkmgwzEJEIyeog9xY1uB-2PLkjJxYFU8ILKv6lO_n2EZqQ8kMGwRqxrehFYGlOAj4S4LBWvOjRM2NPV5yVr0LWI2SkyrjPPaIMotnk4awolw0PH2z_MLl4LMCKwCPZf2JUtuVCFHB6VYzIdbaOD3AXShBHcIfvHkJ40PgqzY");'>
+</div>
+<!-- Overlay Gradient for Depth -->
+<div class="absolute inset-0 z-0 bg-gradient-to-b from-primary/10 via-background-light/50 to-background-light dark:from-primary/5 dark:via-background-dark/80 dark:to-background-dark"></div>
+<!-- Decoration: Simulated Confetti/Particles (Static CSS implementation) -->
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+<!-- Top Left Cluster -->
+<div class="absolute top-[20%] left-[20%] size-3 bg-primary rounded-sm rotate-12 opacity-80"></div>
+<div class="absolute top-[15%] left-[25%] size-2 bg-[#f4c678] rounded-full opacity-60"></div>
+<div class="absolute top-[25%] left-[15%] w-4 h-1 bg-primary -rotate-45 opacity-70"></div>
+<!-- Top Right Cluster -->
+<div class="absolute top-[18%] right-[20%] size-4 border-2 border-primary rounded-full opacity-50"></div>
+<div class="absolute top-[22%] right-[15%] size-2 bg-[#f4c678] rotate-45 opacity-80"></div>
+<div class="absolute top-[10%] right-[30%] w-3 h-1 bg-primary/60 rotate-12 opacity-60"></div>
+<!-- Bottom Scatter -->
+<div class="absolute bottom-[30%] left-[10%] size-2 bg-primary/40 rounded-full"></div>
+<div class="absolute bottom-[25%] right-[10%] size-3 bg-[#f4c678] rotate-[30deg] rounded-sm opacity-50"></div>
+<div class="absolute top-[40%] right-[5%] size-1.5 bg-primary rounded-full opacity-40"></div>
+<div class="absolute top-[35%] left-[5%] size-2 border border-primary/50 rotate-12 rounded-sm"></div>
+</div>
+<!-- Main Content Area -->
+<div class="relative z-10 flex flex-1 flex-col items-center justify-center p-6 w-full">
+<!-- Central Message Card -->
+<!-- Glassmorphism effect: translucency + blur + subtle border -->
+<div class="flex flex-col items-center justify-center text-center w-full max-w-sm rounded-2xl p-8 gap-6 bg-white/60 dark:bg-background-dark/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.2)] border border-white/40 dark:border-white/5 ring-1 ring-primary/10">
+<!-- Dynamic Iconography: Celebration Star -->
+<div class="relative flex items-center justify-center">
+<!-- Glow behind icon -->
+<div class="absolute inset-0 bg-primary/20 blur-2xl rounded-full scale-150"></div>
+<div class="relative bg-primary text-white rounded-full p-5 shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-[48px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<!-- Floating mini icons (decoration) -->
+<span class="material-symbols-outlined absolute -top-2 -right-4 text-primary text-[24px] rotate-12 opacity-80">star</span>
+<span class="material-symbols-outlined absolute -bottom-1 -left-4 text-primary/60 text-[20px] -rotate-12">star</span>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col gap-2">
+<h1 class="text-[#1b160d] dark:text-white tracking-tight text-3xl font-bold leading-tight">
+                        Capsule Sealed
+                    </h1>
+<p class="text-[#9a794c] dark:text-[#d4bca0] text-lg font-medium leading-normal">
+                        Your future self is waiting.
+                    </p>
+</div>
+<!-- Contextual Sub-note -->
+<div class="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/5">
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_clock</span>
+<span class="text-primary/90 text-sm font-semibold">Opening in 2030</span>
+</div>
+</div>
+</div>
+<!-- Footer / Interaction Prompt -->
+<div class="relative z-10 pb-12 pt-4 w-full text-center">
+<!-- Pulsing effect simulation via opacity layers -->
+<button class="group flex flex-col items-center gap-2 mx-auto focus:outline-none">
+<span class="text-[#9a794c] dark:text-[#b09670] text-sm font-medium tracking-wide uppercase opacity-80 group-hover:opacity-100 transition-opacity">
+                    Tap anywhere to continue
+                </span>
+<span class="material-symbols-outlined text-[#9a794c] dark:text-[#b09670] text-[20px] animate-bounce">
+                    keyboard_double_arrow_right
+                </span>
+</button>
+</div>
+</div>
+</body></html>

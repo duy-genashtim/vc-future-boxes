@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FutureBoxes - Type Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee9d2b",
+              "background-light": "#f8f7f6",
+              "background-dark": "#221a10",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* CSS-only state handling for demonstration purposes */
+        .card-radio:checked + label {
+            border-color: #ee9d2b;
+            background-color: rgba(238, 157, 43, 0.05);
+        }
+        .card-radio:checked + label .checkmark {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Hide native radio input */
+        .card-radio {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* Checkmark transition */
+        .checkmark {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Dark mode overrides for checked state background */
+        html.dark .card-radio:checked + label {
+            background-color: rgba(238, 157, 43, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display flex flex-col h-screen overflow-hidden group/design-root text-[#1b160d] dark:text-white">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between shrink-0">
+<div class="flex size-12 shrink-0 items-center justify-start cursor-pointer text-[#1b160d] dark:text-white">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back_ios_new</span>
+</div>
+<h2 class="text-[#1b160d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Create New Box</h2>
+</div>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto w-full flex flex-col">
+<!-- HeadlineText & BodyText -->
+<div class="px-4 pt-4 pb-2">
+<h1 class="text-[#1b160d] dark:text-white tracking-light text-[32px] font-bold leading-tight text-left">Choose a Capsule</h1>
+<p class="text-[#1b160d]/70 dark:text-white/70 text-base font-normal leading-normal pt-2">What kind of message are you sending?</p>
+</div>
+<!-- Selection Grid -->
+<div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 p-4 pb-32">
+<!-- Card 1: Emotion -->
+<div class="relative group">
+<input class="card-radio" id="type_emotion" name="capsule_type" type="radio"/>
+<label class="flex flex-col gap-3 rounded-xl justify-between p-5 aspect-[4/5] bg-white dark:bg-[#2c2216] border-2 border-transparent shadow-sm cursor-pointer select-none relative" for="type_emotion">
+<div class="checkmark absolute top-3 right-3 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white shadow-sm z-10">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<!-- Icon Area -->
+<div class="w-14 h-14 rounded-full bg-[#FFF4E5] dark:bg-[#3D2D1E] flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">sentiment_satisfied</span>
+</div>
+<!-- Text Area -->
+<div class="flex flex-col gap-1">
+<p class="text-[#1b160d] dark:text-white text-lg font-bold leading-tight">Emotion</p>
+<p class="text-[#1b160d]/60 dark:text-white/60 text-sm leading-snug">Capture how you feel right now.</p>
+</div>
+</label>
+</div>
+<!-- Card 2: Goal (Selected by default for demo) -->
+<div class="relative group">
+<input checked="" class="card-radio" id="type_goal" name="capsule_type" type="radio"/>
+<label class="flex flex-col gap-3 rounded-xl justify-between p-5 aspect-[4/5] bg-white dark:bg-[#2c2216] border-2 border-transparent shadow-sm cursor-pointer select-none relative" for="type_goal">
+<div class="checkmark absolute top-3 right-3 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white shadow-sm z-10">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div class="w-14 h-14 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-500">
+<span class="material-symbols-outlined text-[28px]">flag</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#1b160d] dark:text-white text-lg font-bold leading-tight">Goal</p>
+<p class="text-[#1b160d]/60 dark:text-white/60 text-sm leading-snug">Set a milestone for the future.</p>
+</div>
+</label>
+</div>
+<!-- Card 3: Memory -->
+<div class="relative group">
+<input class="card-radio" id="type_memory" name="capsule_type" type="radio"/>
+<label class="flex flex-col gap-3 rounded-xl justify-between p-5 aspect-[4/5] bg-white dark:bg-[#2c2216] border-2 border-transparent shadow-sm cursor-pointer select-none relative" for="type_memory">
+<div class="checkmark absolute top-3 right-3 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white shadow-sm z-10">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div class="w-14 h-14 rounded-full bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-500">
+<span class="material-symbols-outlined text-[28px]">photo_library</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#1b160d] dark:text-white text-lg font-bold leading-tight">Memory</p>
+<p class="text-[#1b160d]/60 dark:text-white/60 text-sm leading-snug">Preserve a special moment forever.</p>
+</div>
+</label>
+</div>
+<!-- Card 4: Decision -->
+<div class="relative group">
+<input class="card-radio" id="type_decision" name="capsule_type" type="radio"/>
+<label class="flex flex-col gap-3 rounded-xl justify-between p-5 aspect-[4/5] bg-white dark:bg-[#2c2216] border-2 border-transparent shadow-sm cursor-pointer select-none relative" for="type_decision">
+<div class="checkmark absolute top-3 right-3 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white shadow-sm z-10">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div class="w-14 h-14 rounded-full bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-500">
+<span class="material-symbols-outlined text-[28px]">alt_route</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#1b160d] dark:text-white text-lg font-bold leading-tight">Decision</p>
+<p class="text-[#1b160d]/60 dark:text-white/60 text-sm leading-snug">Reflect on a choice you made.</p>
+</div>
+</label>
+</div>
+</div>
+</main>
+<!-- Footer Action -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm z-50">
+<!-- Button is enabled because "Goal" is pre-selected in HTML for demo -->
+<button class="w-full h-14 rounded-full bg-primary text-white text-base font-bold shadow-lg shadow-primary/20 flex items-center justify-center active:scale-[0.98] transition-transform">
+            Continue
+        </button>
+</div>
+</body></html>
